@@ -11,12 +11,13 @@ print('mean:',q_2_mean)
 q_2_all = 0
 for q_2_each in q_2:
     q_2_each = (q_2_each-q_2_mean)**2
-    print('(x-x/6)**2:',q_2_each)
+    print('(x-x/',q_2_len,')**2:',q_2_each)
     q_2_all += q_2_each
 #print(q_2_all)
 q_2_ss = q_2_all/q_2_len
-print('Q261_分散=',q_2_ss)
-print('Q261_標準偏差=',math.sqrt(q_2_ss))
+print('分散=',q_2_ss)
+q_2_aa = math.sqrt(q_2_ss)
+print('標準偏差=',round(q_2_aa,1))
 
 
 
