@@ -1,5 +1,6 @@
 import tkinter as tk
 import tkinter.messagebox as tkmsg
+import tkinter.font as tkFont
 import math
 
 root = tk.Tk()
@@ -9,12 +10,19 @@ HEIGHT = 700
 WIDTH = 800
 canvas = tk.Canvas(root,height=HEIGHT,width=WIDTH)
 canvas.pack()
+fontstyle = tkFont.Font(family="Lucida Grande",size=15)
+fontstyle2 = tkFont.Font(family="UTF-8",size=16)
 
+q_nrs = []
 def helloCallBack():
-    text.set("You put:"+str(entry.get()))
-    #tkmsg.showinfo("Hello!!Python!!","Hello World")
+    q_nrs2 = int(entry.get())
     print('loaded')
-    q_nrs = [50,70,90,80,50]
+    q_nrs.append(q_nrs2)
+    #text.set(q_nrs)
+    label3['text'] = q_nrs
+    entry.delete(0,tk.END)
+
+def math2():
     q_nrs_len = len(q_nrs)
     q_nrs_sum = sum(q_nrs)
     q_nrs_mean = q_nrs_sum/q_nrs_len
@@ -32,24 +40,28 @@ def helloCallBack():
     q_nrs_ss = q_nrs_1x2_mean-q_nrs_mean**2
     print('分散=',q_nrs_ss)
     q_nrs_aa = math.sqrt(q_nrs_ss)
-    print('標準偏差=',round(q_nrs_aa,1))
+    print('標準偏差',q_nrs_aa)
+    label4['text'] = "分散=",q_nrs_ss,"\n","標準偏差=",q_nrs_aa
 
 frame = tk.Frame(root,bg="#e6e6e6")
-frame.place(relx=0.1,rely=0.1, relwidth=0.8, relheight=0.8 )
+frame.place(relx=0.02,rely=0.02, relwidth=0.8, relheight=0.8 )
 
-button = tk.Button(frame, text="Test Button",command = helloCallBack)
+button = tk.Button(frame, text="AddNumber",command = helloCallBack)
 button.place(x=210,y=1)
 
-label = tk.Label(frame,text="This is a label",bg='white')
+button2 = tk.Button(frame, text="Calculate",command = math2)
+button2.place(x=210,y=34)
+
+label = tk.Label(frame,text="PutNumbers->",bg='white')
 label.place(x=1,y=1)
 
-text = tk.StringVar(frame)
-text.set("aaaa")
+label3 = tk.Label(frame,text="null",font=fontstyle,bg="#e6e6e6")
+label3.place(x=295,y=1)
 
-label2 = tk.Label(frame,textvariable=text)
-label2.place(x=1,y=30)
+label4 = tk.Label(frame,text="[result]",font=fontstyle2,bg="#e6e6e6")
+label4.place(x=84.7,y=70)
 
 entry = tk.Entry(frame)
-entry.place(x=80,y=2)
+entry.place(x=84.7,y=2)
 
 root.mainloop()
