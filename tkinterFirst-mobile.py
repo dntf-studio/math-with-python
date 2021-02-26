@@ -6,8 +6,8 @@ import math
 root = tk.Tk()
 root.title('first')
 
-HEIGHT = 640
-WIDTH = 400
+HEIGHT = 800
+WIDTH = 360
 canvas = tk.Canvas(root,height=HEIGHT,width=WIDTH)
 canvas.pack()
 fontstyle = tkFont.Font(family="Lucida Grande",size=15)
