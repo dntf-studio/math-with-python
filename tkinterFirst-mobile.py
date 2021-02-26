@@ -44,7 +44,7 @@ def math2():
     label4['text'] = "分散=",q_nrs_ss,"\n","標準偏差=",q_nrs_aa
 
 frame = tk.Frame(root,bg="#e6e6e6")
-frame.place(relx=0.02,rely=0.02, relwidth=0.8, relheight=0.8 )
+frame.place(relx=0,rely=0, relwidth=1, relheight=1 )
 
 button = tk.Button(frame, text="AddNumber",command = helloCallBack)
 button.place(x=210,y=1)
