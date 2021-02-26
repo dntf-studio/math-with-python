@@ -13,6 +13,8 @@ canvas.pack()
 fontstyle = tkFont.Font(family="Lucida Grande",size=15)
 fontstyle2 = tkFont.Font(family="UTF-8",size=16)
 
+bigfont = tkFont.Font(family="UTF-8",size=20)
+
 q_nrs = []
 def helloCallBack():
     q_nrs2 = int(entry.get())
@@ -46,20 +48,20 @@ def math2():
 frame = tk.Frame(root,bg="#e6e6e6")
 frame.place(relx=0,rely=0, relwidth=1, relheight=1 )
 
-button = tk.Button(frame, text="AddNumber",command = helloCallBack)
-button.place(x=210,y=1)
+button = tk.Button(frame, text="AddNumber",command = helloCallBack,font=bigfont)
+button.place(x=210,y=100)
 
-button2 = tk.Button(frame, text="Calculate",command = math2)
-button2.place(x=210,y=34)
+button2 = tk.Button(frame, text="Calculate",command = math2,font=bigfont)
+button2.place(x=210,y=200)
 
 label = tk.Label(frame,text="PutNumbers->",bg='white')
 label.place(x=1,y=1)
 
 label3 = tk.Label(frame,text="null",font=fontstyle,bg="#e6e6e6")
-label3.place(x=295,y=1)
+label3.place(x=84.7,y=400)
 
 label4 = tk.Label(frame,text="[result]",font=fontstyle2,bg="#e6e6e6")
-label4.place(x=84.7,y=70)
+label4.place(x=84.7,y=560)
 
 entry = tk.Entry(frame)
 entry.place(x=84.7,y=2)
